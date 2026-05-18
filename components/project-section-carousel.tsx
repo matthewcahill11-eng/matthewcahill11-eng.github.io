@@ -92,6 +92,11 @@ export default function ProjectSectionCarousel({
     });
   };
 
+  // Don't render section if no projects
+  if (projects.length === 0) {
+    return null;
+  }
+
   return (
     <div className="mb-16">
       <div className="flex items-center justify-between mb-6">

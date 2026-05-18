@@ -160,5 +160,71 @@ export const projectsDatabase: ProjectData[] = [
     date: "Trane Technologies",
     slug: "tk-telematics",
   },
+  // Personal Projects
+  {
+    title: "Hallbach Motor",
+    description: "Independent research project developing the first electromagnet Halbach array for motor stators. 30% increase in peak torque vs standard pole array, validated through Ansys Maxwell CEM modelling and 3D-printed prototype. Selected for Start100 accelerator with €4,000 funding, offered PhD route and spinout path.",
+    content: `<h3>Independent Research Project: Halbach vs Standard Electromagnet Array for Motor Stators</h3>
+<p><strong>Third-year summer research project, undergraduate engineering — selected for college startup accelerator, offered onward PhD route and spinout path</strong></p>
+
+<p>While working on magnet configurations, I realised that although the Halbach array is well-characterised for permanent magnets, nobody had built or tested an <em>electromagnet</em> Halbach array — the same flux-shaping principle applied to wound coils rather than fixed magnets. The summer project set out to fill that gap: develop a computational electromagnetic model of an electromagnet Halbach configuration, verify it against analytical hand calculations, and validate it experimentally on a working prototype.</p>
+
+<p><strong>Result: 30% increase in peak torque (Halbach electromagnet array vs standard pole array). Ansys Maxwell CEM model cross-checked with hand calculations and confirmed on a 3D-printed prototype stator. Selected for the Start100 accelerator with €4,000 in funding; offered both a PhD continuation and a college-backed startup spinout off the back of the work.</strong></p>
+
+<p>I observed that the Halbach array concentrates flux on one side of the coil stack and cancels it on the other — which means the back iron in a conventional motor (there to provide a return path for the flux) becomes redundant. Removing it saves weight and shifts the operating envelope. For the same airgap flux density, you can drive the motor at higher voltage and lower current, which improves efficiency directly through reduced I²R losses. The novelty of applying this to electromagnets specifically is that flux strength becomes controllable in real time via coil current — something a permanent-magnet Halbach cannot do. Secondarily, high voltage architecture in EVs is much lighter as a reduced area of copper is required for the same power density. EV's follow a law where every kilo removed, removes a kilo of necessary battery weight, therefore, if you remove 50 kg of cumulative back iron, you remove 100kg of mass from the car, and subsequently increase the range.</p>
+
+<h3>Scope of the project</h3>
+<ul>
+<li><strong>Ansys Maxwell CEM modelling</strong> — built side-by-side computational electromagnetic models of a standard pole array (peak field ~38.8 mT in the back iron) and a Halbach electromagnet array (peak ~27 mT, with the field redistributed into the airgap rather than the iron return path).</li>
+<li><strong>Analytical cross-check</strong> — derived the expected field distributions by hand and verified that the Maxwell solver output matched first-principles electromagnetics, before trusting the simulation for downstream torque analysis.</li>
+<li><strong>Full-motor field analysis</strong> — extended the comparison from linear coil stacks to a rotational stator geometry, comparing field distribution around the airgap and into the rotor.</li>
+<li><strong>Torque-vs-angle characterization</strong> — swept rotor angle from −20° to +20° for both configurations. Halbach peaked at ~1.9 Nm vs ~0.5 Nm for the standard array — a ~30% gain at the operating point, with a much cleaner sinusoidal profile.</li>
+<li><strong>Prototype build and experimental validation</strong> — designed and 3D-printed a stator housing, wound the coils in the Halbach orientation, fitted an existing two-pole induction rotor inside it, and confirmed the simulated torque improvement on the bench. Closed the loop between hand calculation, CEM prediction, and physical measurement.</li>
+</ul>
+
+<h3>Recognition</h3>
+<ul>
+<li><strong>Selected for UoG Start100, a highly competitive college startup summer accelerator</strong>, with €4,000 in funding to develop the topology commercially. Pitched the work to leading Irish founders as part of the programme.</li>
+<li><strong>Offered a funded PhD route</strong> to continue the research at postgraduate level.</li>
+<li><strong>Offered a college-backed startup spinout</strong> to commercialise the topology — the back-iron reduction case is commercially interesting because motor weight directly drives EV range and aerospace payload economics, and the controllable-flux aspect of an electromagnet variant opens applications a permanent-magnet Halbach cannot reach.</li>
+<li>Chose to continue into industry rather than take either route, but the accelerator selection and both offers came directly off the strength of the validated electromagnet topology.</li>
+</ul>`,
+    tags: ["Motor Design", "Electromagnetics", "Ansys Maxwell", "CEM", "Prototyping", "Research", "3D Printing"],
+    date: "University of Galway",
+    slug: "hallbach-motor",
+    section: "Personal Projects",
+    images: ["/image.png", "/image 1.png", "/image 2.png", "/image 3.png"],
+  },
+  {
+    title: "YC AI Startup School",
+    description: "Hand-picked attendee for Y Combinator's inaugural AI Startup School — one of 2,500 top CS undergrads, masters, and PhD candidates in AI worldwide. Flown to San Francisco for two-day conference at Pier 48 with talks from Sam Altman, Elon Musk, Satya Nadella, Andrej Karpathy, Fei-Fei Li, Andrew Ng, John Jumper, and Aravind Srinivas.",
+    content: `<h2>Selection: YC AI Startup School 2025</h2>
+<p><strong>Hand-picked attendee, Y Combinator AI Startup School — San Francisco, June 2025</strong></p>
+
+<p>Selected as one of four attendees from Ireland for Y Combinator's inaugural AI Startup School, a <strong>hand-picked gathering of 2,500 of the top CS undergrads, masters, and PhD candidates in AI worldwide.</strong> Flown out to San Francisco for the two-day conference at Pier 48 alongside fellow Irish attendee Eoin [surname].</p>
+
+<p><strong>Result: 4 of 2,500 attendees globally. $25k AWS credits. Direct exposure to talks from Sam Altman, Elon Musk, Satya Nadella, Andrej Karpathy, Fei-Fei Li, Andrew Ng, John Jumper, and Aravind Srinivas.</strong></p>
+
+<p><a href="https://events.ycombinator.com/ai-sus" target="_blank" rel="noopener noreferrer">https://events.ycombinator.com/ai-sus</a></p>
+
+<h3>Selection bar</h3>
+<ul>
+<li><strong>Hand-picked admissions</strong> — YC reviewed technical achievements rather than credentials alone: shipped projects, papers, open-source contributions, products with real users.</li>
+<li><strong>Cohort scale</strong> — 2,500 attendees globally drawn from CS, ML, applied maths, and robotics programmes; the cohort skewed heavily toward grad students and early-stage founders.</li>
+<li><strong>Sponsor credits</strong> — $25k in AWS credits provided to attendees as a conference perk, applied toward subsequent build work.</li>
+</ul>
+
+<h3>What came out of it</h3>
+<ul>
+<li><strong>International network in AI and robotics</strong> — direct connections into the SF AI scene and across to ETH Zürich, spanning early-stage founders, robotics researchers, and applied ML engineers.</li>
+<li><strong>VC introductions</strong> — intros to several top-tier US venture firms made on the back of the event.</li>
+<li><strong>Speaker substance</strong> — talks from Altman (OpenAI's early-days near-misses on AGI), Karpathy (the trajectory of agents), Nadella, Musk, Fei-Fei Li, Andrew Ng, John Jumper (AlphaFold), and Aravind Srinivas (Perplexity). The candour on what doesn't work was the unexpected through-line.</li>
+</ul>`,
+    tags: ["Y Combinator", "AI", "Machine Learning", "Networking", "San Francisco", "Startups"],
+    date: "June 2025",
+    slug: "yc-ai-startup-school",
+    section: "Scholarships Awards honous & recognitionh",
+    images: ["/social_media_aisus-61de8e53bc438272.png"],
+  },
 ];
 
