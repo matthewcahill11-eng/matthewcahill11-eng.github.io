@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center pt-16"
+      className="min-h-[50vh] flex items-center justify-center pt-16 pb-8"
     >
       <div className="container mx-auto px-4 text-center">
         {/* Profile image placeholder */}
