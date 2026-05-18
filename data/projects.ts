@@ -32,10 +32,11 @@ export const projectsDatabase: ProjectData[] = [
     ],
   },
   {
-    title: "PhysicsML Patent",
+    title: "AI Physics Model - Patent Pending",
     description:
       "Built a real-time autoregressive LSTM that solves a thermo-fluid simulation problem existing ML architectures couldn't handle — adapting Google DeepMind's early chatbot architecture to work on continuous physics.",
     section: "Trane Technologies",
+    headline: true,
     content: `<h2>R&D Patent: Real-Time Autoregressive ML for Multiphysics Reduced-Order Modelling</h2>
 <p><strong>Graduate R&D Engineer, Trane Technologies — patent passed internal IP council first review, under review at BrainBox AI ahead of submission</strong></p>
 
@@ -281,13 +282,14 @@ export const projectsDatabase: ProjectData[] = [
     images: ["/image-004.png", "/image-005.png", "/image-006.png"],
   },
   {
-    title: "Mechanical Design Project",
+    title: "B.E Capstone Machine Design Project",
     description: "Led a four-person team designing a fully automated 1000 kg EV battery swap system (University of Galway Machine Design Project, 2023); personally owned the scissor lift sub-assembly across kinematics, FEA, hydraulics and full CAD. 300+ part assembly.",
     content: "",
     tags: ["Mechanical Design", "CAD", "FEA", "Hydraulics", "Team Lead", "Project Management"],
     date: "University of Galway, April 2023",
     slug: "ev-battery-swap-mechanism",
     section: "Engineering",
+    headline: true,
     images: ["/image-013.png", "/image-014.png", "/image-015.png", "/image-016.png", "/image-017.png", "/image-018.png"],
   },
   {

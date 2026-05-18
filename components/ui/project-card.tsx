@@ -25,6 +25,7 @@ export interface ProjectData {
   slug?: string; // URL slug for the project
   section?: string; // Which section this project belongs to
   headline?: boolean; // Flag to include this project in the headline section
+  imageStyle?: string; // Custom CSS classes for image styling (e.g., "object-cover scale-150")
 }
 
 interface ProjectCardProps {

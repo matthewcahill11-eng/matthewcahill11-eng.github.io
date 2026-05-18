@@ -25,7 +25,7 @@ export default function Projects() {
 
         {/* Engineering Section */}
         <ProjectSectionCarousel
-          title="Engineering"
+          title="Engineering College Projects"
           projects={engineeringProjects}
         />
 
