@@ -24,6 +24,7 @@ export interface ProjectData {
   icon?: React.ReactNode;
   slug?: string; // URL slug for the project
   section?: string; // Which section this project belongs to
+  headline?: boolean; // Flag to include this project in the headline section
 }
 
 interface ProjectCardProps {

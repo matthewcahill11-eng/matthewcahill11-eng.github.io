@@ -22,7 +22,8 @@ export const projectsDatabase: ProjectData[] = [
     tags: ["CFD", "FEM", "Machine Learning", "Aeroelastics", "Research"],
     date: "MEng, University of Galway",
     slug: "wind-turbine-aeroelastic",
-    section: "headline",
+    section: "Engineering",
+    headline: true,
     images: [
       "/preview-01.png",
       "/preview-02.png",
@@ -34,7 +35,7 @@ export const projectsDatabase: ProjectData[] = [
     title: "PhysicsML Patent",
     description:
       "Built a real-time autoregressive LSTM that solves a thermo-fluid simulation problem existing ML architectures couldn't handle — adapting Google DeepMind's early chatbot architecture to work on continuous physics.",
-    section: "headline",
+    section: "Trane Technologies",
     content: `<h2>R&D Patent: Real-Time Autoregressive ML for Multiphysics Reduced-Order Modelling</h2>
 <p><strong>Graduate R&D Engineer, Trane Technologies — patent passed internal IP council first review, under review at BrainBox AI ahead of submission</strong></p>
 
@@ -124,8 +125,8 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "TK Telematics",
     description:
-      "Stepped up as a graduate to own and lead the OTA telematics validation campaign at Trane Technologies — 100% failure to 100% pass rate, 20+ tests, $2M+ risk retired, shipped on time for flagship V1 release.",
-    section: "headline",
+      "Led OTA telematics validation campaign as a graduate that <strong>saved Trane Technologies $2M+</strong> in manual dealer campaigns — took ownership when previous launch cost $2M without OTA capability, delivered 100% pass rate across 20+ tests, shipped on time for flagship V1 release.",
+    section: "Trane Technologies",
     content: `<h2>Graduate Engineer, Trane Technologies</h2>
 
 <p>A previous product launch without OTA update capability had cost the business <strong>over $2M</strong> in manual dealer workshop campaigns. With no existing validation campaign, no oversight, and the product approaching release, leadership identified that OTA capability had been overlooked and added late as a requirement. I stepped up as a graduate to own and lead the campaign from scratch, and subsequently delivered it in <strong>two months</strong>.</p>

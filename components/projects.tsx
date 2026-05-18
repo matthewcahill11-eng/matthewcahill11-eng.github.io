@@ -3,7 +3,8 @@ import { projectsDatabase } from "@/data/projects";
 
 export default function Projects() {
   // Group projects by section
-  const headlineProjects = projectsDatabase.filter((p) => p.section === "headline");
+  // Headline section includes both projects with section="headline" AND any project with headline=true flag
+  const headlineProjects = projectsDatabase.filter((p) => p.section === "headline" || p.headline === true);
   const traneProjects = projectsDatabase.filter((p) => p.section === "Trane Technologies");
   const forgeProjects = projectsDatabase.filter((p) => p.section === "Forge Robotics");
   const personalProjects = projectsDatabase.filter((p) => p.section === "Personal Projects");
@@ -16,46 +17,46 @@ export default function Projects() {
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold tracking-tight mb-12">Projects</h2>
 
-        {/* Headline Projects Section - populated */}
+        {/* Headline Projects Section */}
         <ProjectSectionCarousel
           title="Headline Projects"
           projects={headlineProjects}
         />
 
-        {/* Trane Technologies Section - empty for now */}
-        <ProjectSectionCarousel
-          title="Trane Technologies"
-          projects={traneProjects}
-        />
-
-        {/* Forge Robotics Section - empty for now */}
-        <ProjectSectionCarousel
-          title="Forge Robotics"
-          projects={forgeProjects}
-        />
-
-        {/* Personal Projects Section - empty for now */}
-        <ProjectSectionCarousel
-          title="Personal Projects"
-          projects={personalProjects}
-        />
-
-        {/* Engineering Section - empty for now */}
+        {/* Engineering Section */}
         <ProjectSectionCarousel
           title="Engineering"
           projects={engineeringProjects}
         />
 
-        {/* Scholarships Awards & Recognition Section - empty for now */}
+        {/* Scholarships Awards & Recognition Section */}
         <ProjectSectionCarousel
           title="Scholarships, Awards & Recognition"
           projects={scholarshipProjects}
         />
 
-        {/* Sports & Extra Section - empty for now */}
+        {/* Trane Technologies Section */}
+        <ProjectSectionCarousel
+          title="Trane Technologies"
+          projects={traneProjects}
+        />
+
+        {/* Personal Projects Section */}
+        <ProjectSectionCarousel
+          title="Personal Projects"
+          projects={personalProjects}
+        />
+
+        {/* Sports & Extra Section */}
         <ProjectSectionCarousel
           title="Sports & Extra"
           projects={sportsProjects}
+        />
+
+        {/* Forge Robotics Section */}
+        <ProjectSectionCarousel
+          title="Forge Robotics"
+          projects={forgeProjects}
         />
       </div>
     </section>
