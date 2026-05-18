@@ -81,7 +81,7 @@ export const projectsDatabase: ProjectData[] = [
     title: "On-Prem Cursor",
     description:
       "Built an on-prem, IP-safe agentic coding platform (Ollama + open-source VS Code agent + Open WebUI) for a Fortune 500 hardware R&D team at Trane — adopted by 2–5 engineers, used on departmental ML pipelines.",
-    section: "headline",
+    section: "Trane Technologies",
     content: `<h2>Side Project: On-Prem Agentic Coding Platform</h2>
 <p><strong>Self-initiated tooling, Trane Technologies — adopted by 2–5 engineers; triggered an internal review into team-wide Claude adoption</strong></p>
 
@@ -225,6 +225,105 @@ export const projectsDatabase: ProjectData[] = [
     slug: "yc-ai-startup-school",
     section: "Scholarships Awards honous & recognitionh",
     images: ["/social_media_aisus-61de8e53bc438272.png"],
+  },
+  {
+    title: "CFD Modelling of Air Flow Past a 2D Turbine Cascade",
+    description: "Built a 2D CFD model of an SE1050 turbine cascade in Ansys Fluent — quantified the lift-vs-drag trade-off across five inlet/blade-angle scenarios, demonstrating that shallow-angle multi-stage cascades extract work more efficiently than aggressive single-stage designs.",
+    content: `<h2>Project: CFD Modelling of Air Flow Past a 2D Turbine Cascade</h2>
+<p><strong>ME426 Turbomachines & Advanced Fluid Dynamics, University of Galway — April 2025</strong></p>
+
+<p>Built a 2D CFD model of a steam turbine blade cascade in Ansys Fluent to quantify how inlet velocity and blade attack angle trade off against each other in the extraction of mechanical work from a flow stream. Five scenarios spanning 10–70 m/s inlet velocities and ±10° blade angle deviations were simulated to isolate the effect of each parameter on lift, drag, and total pressure loss across the cascade.</p>
+
+<p><strong>Result: lift/drag ratio swung from 1.11 at +10° attack to 3.50 at -10°. Higher attack extracted ~951 N lift per blade but lost it to 859 N drag; lower attack extracted 671 N lift against only 192 N drag — quantifying the staging-vs-single-stage efficiency trade-off in turbine design.</strong></p>
+
+<h3>Scope of the work</h3>
+<ul>
+<li><strong>Geometry & meshing</strong> — SE1050 aerofoil profile, five-blade cascade with 100 mm chord and 55.12 mm pitch, modelled in a 700 × 500 mm domain. Mesh inflation applied at wall boundaries to resolve the viscous sublayer required by the turbulence model.</li>
+<li><strong>Turbulence modelling</strong> — k-ω SST governing equations (Menter, 1994) selected for stable resolution of the wall-bounded turbulent flow across the blade row.</li>
+<li><strong>Boundary conditions</strong> — velocity inlet, outlet-vent with no-back-flow, no-slip walls on the cascade boundaries and aerofoil surfaces.</li>
+<li><strong>Parametric sweep</strong> — three inlet velocity cases (70 / 40 / 10 m/s) and two blade angle deviations (322.89° baseline, ±10°), with drag, lift, total pressure, and flow angle extracted from the second aerofoil and the trailing-edge monitoring line.</li>
+<li><strong>Post-processing</strong> — static and total pressure contour maps, velocity vector fields, streamline plots, and a 100-point trailing-edge line probe to compute outlet flow angle and total pressure profiles.</li>
+</ul>
+
+<h3>How the trade-off surfaced</h3>
+<p>Increasing attack angle widened the flow separation angle and raised the pressure differential across the blade — which produces more lift, and by Euler's turbomachine equation, more shaft work per stage. But the same mechanism that compresses the fluid below the blade also pulls harder against the flow direction, and the drag scales faster than the lift. Reading the static pressure maps alongside the lift/drag table makes the result legible: a +10° aggressive blade extracts the most work per stage but bleeds the most energy to drag, while a -10° shallow blade has a much higher lift/drag ratio. The engineering conclusion — that multiple shallow-angle stages can outperform a single steep stage on net efficiency — falls out of the data rather than being asserted.</p>`,
+    tags: ["CFD", "Ansys Fluent", "Turbomachines", "Fluid Dynamics", "Engineering"],
+    date: "University of Galway, April 2025",
+    slug: "cfd-turbine-cascade",
+    section: "Engineering",
+    images: ["/image-000.png", "/image-001.png", "/image-002.png", "/image-003.png"],
+  },
+  {
+    title: "Computational Solver for Elastoplastic Hardening",
+    description: "Built a computational solver in Excel implementing the Chaboche nonlinear hardening algorithm with integrated parameter fitting, cross-validated against an Abaqus axisymmetric FEA model — fit SSE 406.62, ±17% agreement on small-deformation loads.",
+    content: `<h2>Computational Solver for Elastoplastic Hardening, Validated Against FEA</h2>
+<p><strong>Chaboche nonlinear isotropic hardening algorithm — Excel implementation, Abaqus cross-validation</strong></p>
+
+<p>Built a computational solver in Excel implementing the Chaboche nonlinear isotropic hardening algorithm, with an integrated parameter-fitting routine driven by Excel Solver. Cross-validated against an axisymmetric Abaqus FEA model using the same identified parameters to bound the solver's region of validity.</p>
+
+<p><strong>Result: solver fit to 316 stainless steel test data with SSE = 406.62. Solver and FEA agreed within ±17% on small-deformation loads; nonlinear-geometry case diverged to 68% on failure load, marking the solver's edge of validity at large strain.</strong></p>
+
+<h3>Scope of the work</h3>
+<ul>
+<li><strong>Solver algorithm</strong> — implemented the iterative Chaboche stress update dσ = E(1 − E/(E + b(Q − r(p)))) dε with strain-controlled increments of 0.001, hardening state r(p) updated each step against saturation stress Q.</li>
+<li><strong>Parameter-fitting routine</strong> — paired the solver with a least-squares objective driven by Excel Solver, identifying b = 4.43, Q = 500 MPa, σy = 229.6 MPa, E = 69.2 GPa from engineering stress-strain test data.</li>
+<li><strong>FEA cross-validation</strong> — axisymmetric Abaqus model (CAX8R reduced-integration elements, mesh size 2), leader-follower equation constraint on the top edge to enforce uniform U2 displacement, run in tension and compression with NLGEOM on/off.</li>
+<li><strong>Failure analysis</strong> — identified tensile failure at 271 kN (NLGEOM on) where load drops indicate cross-sectional collapse; linear-geometry case continues to 440 kN because FEA doesn't model rupture.</li>
+</ul>
+
+<h3>What the comparison surfaced</h3>
+<p>Tension and compression matched under linear geometry. Switching NLGEOM on broke the symmetry: compression rises exponentially as incompressible plastic flow forces constant volume; tension peaks then drops as the section necks. The Excel solver — which doesn't track geometry — tracks the linear FEA case closely but mispredicts failure under large deformation, defining a clean boundary for where the algorithm is trustworthy.</p>`,
+    tags: ["Excel", "FEA", "Abaqus", "Material Science", "Computational Mechanics"],
+    date: "University of Galway",
+    slug: "elastoplastic-hardening-solver",
+    section: "Engineering",
+    images: ["/image-004.png", "/image-005.png", "/image-006.png"],
+  },
+  {
+    title: "Mechanical Design Project",
+    description: "Led a four-person team designing a fully automated 1000 kg EV battery swap system (University of Galway Machine Design Project, 2023); personally owned the scissor lift sub-assembly across kinematics, FEA, hydraulics and full CAD. 300+ part assembly.",
+    content: "",
+    tags: ["Mechanical Design", "CAD", "FEA", "Hydraulics", "Team Lead", "Project Management"],
+    date: "University of Galway, April 2023",
+    slug: "ev-battery-swap-mechanism",
+    section: "Engineering",
+    images: ["/image-013.png", "/image-014.png", "/image-015.png", "/image-016.png", "/image-017.png", "/image-018.png"],
+  },
+  {
+    title: "Boxing in Pink",
+    description: "Owned marketing for a student charity boxing tournament while competing on the card — 400 tickets sold, €13,000 raised for breast cancer research, Monster Energy secured as headline sponsor.",
+    content: `<h2>Head of Marketing, University Boxing Club</h2>
+<p><strong>Student-run charity tournament for breast cancer research</strong></p>
+
+<p>Owned the marketing function for a student boxing tournament raising money for breast cancer research, while also competing as one of the boxers on the card. The brief was to fill the venue and maximise the donation — both depended on ticket sales and sponsorship moving in parallel.</p>
+
+<p><strong>Result: 400 tickets sold, €13,000 raised for charity, Monster Energy secured as headline sponsor.</strong></p>
+
+<h3>Scope of the work</h3>
+<ul>
+<li><strong>Sponsorship</strong> — Monster Energy. Pitched and closed a Monster Energy sponsorship as the headline commercial partner, covering production costs and freeing ticket revenue for the charity total.</li>
+<li><strong>Social media campaign</strong> — Produced short-form video content for the run-up to the event; several pieces went viral within the student audience and drove the bulk of late ticket sales.</li>
+<li><strong>Print and venue collateral</strong> — Designed the poster set used across campus and venue branding on the night.</li>
+<li><strong>Ticket sales</strong> — 400 tickets shifted through the campaign — the funnel that converted the €13,000 charity total.</li>
+</ul>
+
+<h3>Competing on the night</h3>
+<p>Also fought on the card the same evening. Splitting attention between running the marketing for the event and preparing to compete in it forced sharp prioritisation in the final week — sponsorship and ticket commitments were locked early so the last days could be spent training without the campaign slipping.</p>`,
+    tags: ["Marketing", "Event Management", "Charity", "Sponsorship", "Boxing"],
+    date: "University of Galway",
+    slug: "boxing-in-pink",
+    section: "Sports & Extra",
+    images: ["/image-025.png", "/image-026.png"],
+  },
+  {
+    title: "Student Success Panel Speaker",
+    description: "Invited as one of 20 students to speak to the incoming class of 1000 STEM students, on study and student success tips.",
+    content: "",
+    tags: ["Public Speaking", "Mentorship", "University", "STEM"],
+    date: "University of Galway",
+    slug: "student-success-panel",
+    section: "Scholarships Awards honous & recognitionh",
+    images: ["/Screenshot_2026-05-18_072906.webp"],
   },
 ];
 

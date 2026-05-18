@@ -29,7 +29,7 @@ export default function ProjectSectionCarousel({
   const scrollSpeed = 0.02; // pixels per millisecond (slow)
 
   useEffect(() => {
-    if (isPaused || projects.length <= 3) return;
+    if (isPaused || projects.length <= 1) return;
 
     const animate = (timestamp: number) => {
       if (!lastTimestamp.current) lastTimestamp.current = timestamp;
@@ -101,7 +101,7 @@ export default function ProjectSectionCarousel({
     <div className="mb-16">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold tracking-tight">{title}</h3>
-        {projects.length > 3 && (
+        {projects.length > 1 && (
           <div className="flex gap-2">
             <button
               onClick={handlePrev}
