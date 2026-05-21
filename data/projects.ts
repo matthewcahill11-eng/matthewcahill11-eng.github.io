@@ -103,6 +103,52 @@ export const projectsDatabase: ProjectData[] = [
     images: [],
   },
   {
+    title: "Master's Thesis WP3: Experimental Validation of Prototype HiL Simulator",
+    description:
+      "Ran ground-truth bench testing on a real Advancer A-500 at Thermo King's Galway R&D facility, validated the Simulink model and Arduino HiL system against measured data, and root-caused two discrepancies — a 4.32× modulation acceleration and ~50% cooling overshoot.",
+    tags: ["Experimental Validation", "Data Acquisition", "Root Cause Analysis", "MultiDAC", "Bench Testing"],
+    date: "M.E. Mechanical Engineering, University of Galway",
+    slug: "masters-thesis-wp3",
+    section: "Engineering",
+    headline: true,
+    content: `<h2>Master's Thesis Work Package 3: Experimental Validation of a Prototype HiL Simulator Against a Real Thermo King Advancer</h2>
+<p><strong>M.E. thesis (WP3), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
+
+<p>The first two work packages built a Simulink vapour-compression-cycle model and an Arduino-based HiL simulator for the Thermo King Advancer single-temperature platform. WP3 ran ground-truth bench testing on a real Advancer A-500 at the Galway R&D facility, cross-compared the model and HiL output against the measured data, and root-caused the discrepancies that surfaced.</p>
+
+<p><strong>Result: behavioural validation of the model and HiL system confirmed at programme level. Two discrepancies isolated and root-caused — a 4.32× acceleration in modulation dynamics, traced to the Simscape constant-volume chamber's instantaneous-equilibrium assumption, and a ~50% cooling-capacity overshoot, attributed to the controls difference (real Cycle Sentry vs prototype On-Off) and the refrigerant difference (R134a in the model vs R452A in the real Advancer).</strong></p>
+
+<h3>Scope of the testing</h3>
+<ul>
+<li><strong>Unit under test</strong> — Advancer A-500 single-temperature system, labelled MAB9 in the Thermo King Galway R&D yard, mounted on a Schmitz Cargobull 13 m three-axle trailer with an empty cargo box.</li>
+<li><strong>Test conditions</strong> — −22°C setpoint, 10°C ambient at test start, ~6 hour duration, Cycle Sentry operating mode, diesel fuel, single zone covering the full trailer volume.</li>
+<li><strong>Data acquisition</strong> — MultiDAC software via USB to the controller HMI, 5-second sample rate. Logged channels: return and delivered air temperature (PT1000 RTDs), engine flywheel rpm, setpoint and cooling capacity requests from the CAN bus, ambient temperature.</li>
+<li><strong>Comparison basis</strong> — Real Advancer experimental data versus the WP1 Simulink VCC model and the WP2 HiL simulator run at equivalent setpoints. Comparison performed on modulation cycle period, peak cooling capacity, and engine On-Off behaviour.</li>
+</ul>
+
+<h3>How the discrepancies surfaced</h3>
+<p>Two gaps appeared on the first model-vs-experiment overlay. The model's first modulation cycle ran at a peak-to-peak time of 250 seconds; the real Advancer's first modulation cycle ran at 1080 seconds — a 4.32× acceleration of the simulated dynamics. Separately, at comparable conditions the model applied 11.3 kW of cooling at −20°C while the real unit applied only 5 kW at −22°C — roughly 50% overshoot in cooling delivered.</p>
+
+<p>The first discrepancy was traced back into the Simscape library itself. The trailer cargo box was modelled with the constant-volume moist-air chamber block, whose source code (line 578) sums total internal energy across all ports instantaneously — meaning the block assumes the cargo box reaches thermal equilibrium with the inlet air at every timestep, ignoring flow resistance and thermal inertia. That assumption is the root cause of the acceleration: the simulated trailer cools faster than a real trailer can, so the controller cycles faster.</p>
+
+<p>The second discrepancy was attributed to two factors documented in the thesis discussion. First, the real Advancer's Cycle Sentry runs a multi-surface cost-function controller, not the On-Off hysteresis used in the prototype, so it modulates cooling capacity continuously rather than running flat-out between thresholds. Second, the model uses R134a as the working fluid while the production Advancer outside Saudi Arabia uses an R452A blend — a different enthalpy profile through the cycle. Both are real and named, and both bound the validity of the model in a way the discussion chapter spells out.</p>
+
+<h3>Delivered</h3>
+<ul>
+<li>Ground-truth experimental dataset from one ~6 hour duty cycle on Unit MAB9 covering setpoint pull-down, modulation, and steady-state behaviour, logged via MultiDAC at 5-second resolution.</li>
+<li>Programme-level behavioural validation of the WP1 model and WP2 HiL simulator — the system reproduces the qualitative engine On-Off behaviour and pull-down profile of the real Advancer.</li>
+<li>Quantitative discrepancy report with both gaps root-caused: 4.32× dynamic acceleration attributed to the Simscape chamber's instantaneous-equilibrium assumption (line 578); ~50% cooling overshoot attributed to the controls and refrigerant differences between the model and the real unit.</li>
+<li>Bounded validation outcome — the system is validated as a behaviourally equivalent test environment for embedded-controller development, not as a digital twin of the Advancer. Both bounds are documented for the follow-on engineer.</li>
+</ul>
+
+<h3>Honest framing</h3>
+<p>Only one duty cycle test was performed. The R&D facility has limited availability and the test campaign was scoped accordingly — this WP is a validation pass, not a statistical characterisation, and the conclusions are written to that scope.</p>
+
+<h3>Recognition</h3>
+<p>WP3 of an M.E. thesis at University of Galway, industry-sponsored by Thermo King / Trane Technologies. Supervised by Mr. Padraig Conneely (University of Galway) with industry advisor Marcus O'Mahony (Thermo King). The thesis is the first reported demonstration of HiL simulation applied to transport refrigeration.</p>`,
+    images: [],
+  },
+  {
     title: "ML-Accelerated Aeroelastic Modelling of Onshore Wind Turbines",
     description:
       "Literature review and research study proposal identifying machine learning as the unexploited lever for breaking computational cost barriers in wind turbine simulation. Proposed ML-integration programme targeting 2.3–3.1× speed-ups through CFD-ML coupling, neural-network turbulence closures, and surrogate FEM. Graded 98% — highest in cohort, subsequently adopted as reference document for master's research projects.",
