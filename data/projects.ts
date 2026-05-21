@@ -24,7 +24,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp1",
     section: "Engineering",
     headline: true,
-    images: ["/wp1 image.png"],
+    images: ["/wp1 image.png", "/wp1 2.png"],
     content: `<h2>Master's Thesis Work Package 1: Simulink Model of the Thermo King Advancer Vapour Compression Cycle</h2>
 <p><strong>M.E. Mechanical Engineering, University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
