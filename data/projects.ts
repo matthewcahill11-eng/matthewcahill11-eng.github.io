@@ -16,6 +16,48 @@ import { ProjectData } from "@/components/ui/project-card";
 
 export const projectsDatabase: ProjectData[] = [
   {
+    title: "Master's Thesis WP1: Simulink Model of Thermo King Advancer VCC",
+    description:
+      "Built a real-time-capable Simulink and Simscape Fluids model of the Thermo King Advancer A-500 vapour compression cycle, tuned to 19.5 kW cooling capacity at 0°C. Part of the first hardware-in-the-loop simulator demonstrated for transport refrigeration in the literature.",
+    tags: ["Simulink", "Simscape", "HiL", "Digital Twin", "VCC", "Real-Time Simulation", "MATLAB"],
+    date: "M.E. Mechanical Engineering, University of Galway",
+    slug: "masters-thesis-wp1",
+    section: "Engineering",
+    headline: true,
+    content: `<h2>Master's Thesis Work Package 1: Simulink Model of the Thermo King Advancer Vapour Compression Cycle</h2>
+<p><strong>M.E. Mechanical Engineering, University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
+
+<p>Built a real-time-capable Simulink and Simscape Fluids model of the Thermo King Advancer A-500 single-temperature vapour compression cycle, tuned to the system's rated 19.5 kW cooling capacity at 0°C, with a Cycle-Sentry-equivalent On-Off hysteresis controller running inside the model. Part of the first hardware-in-the-loop simulator demonstrated for transport refrigeration in the literature.</p>
+
+<p><strong>Result: 19.5 kW cooling capacity at 0°C reproduced. Real-time execution on commodity hardware. Behaviour validated against bench data from a real Advancer A-500.</strong></p>
+
+<p>The model is the digital half of the HiL system — the component the embedded controller talks to as if it were wired to a real Advancer. The original plan was a mathematical model from scratch, built on the Alleyne research group's two-phase heat exchanger models; this was carried through to December and could not be integrated with the HiL system in time. The model was rebuilt from scratch in January using Simscape Fluids, with the compressor and condenser deliberately simplified to fluid reservoirs to keep the system real-time-capable for HiL operation.</p>
+
+<h3>Scope of the model</h3>
+<ul>
+<li><strong>Simscape Fluids two-phase network</strong> — full evaporator subsystem (cross-flow heat exchanger against the trailer return air), refrigerant mass-flow source, and fixed-enthalpy reservoirs standing in for the compressor and condenser.</li>
+<li><strong>Trailer thermal network</strong> — Simscape moist-air constant-volume chamber for the cargo box, plus a lumped thermal resistance and thermal-mass network for the trailer walls, parameterised against Bin Li's 13 m trailer model.</li>
+<li><strong>Cycle-Sentry-equivalent controller</strong> — On-Off hysteresis with a 0°C lower and +3°C upper threshold relative to setpoint, replicating the engine-modulation behaviour of the real Cycle Sentry operating mode.</li>
+<li><strong>Solver configuration</strong> — ode1 Euler forwards at a 0.1 s fixed timestep. Backwards Euler was trialled and failed with tick-missed errors at the minimum stable timestep, so Euler forwards was retained as the only solver that held both stability and real-time compliance.</li>
+<li><strong>Honest scope limits</strong> — refrigerant in the model is R134a, against R452A in the real Advancer; compressor and condenser are reservoirs rather than first-principles models. Both are named in the discussion chapter and are real sources of discrepancy against the bench data.</li>
+</ul>
+
+<h3>How the gap surfaced</h3>
+<p>During validation, the model's modulation cycle ran roughly 4.32× faster than the real Advancer — the bench data showed an 1,080 s peak-to-peak first modulation cycle against 250 s in simulation. Rather than tuning parameters until the curves matched, the discrepancy was diagnosed by reading the source code of the Simscape constant-volume moist-air chamber block. Line 578 of the block sums total internal energy across all ports instantaneously — the block assumes the cargo box reaches thermal equilibrium with no flow resistance or thermal inertia. That assumption is the root cause of the acceleration, and it cannot be parameterised out. The diagnosis was carried through to the discussion chapter as the principal limitation of the trailer subsystem, with a reduced-order CFD-trained surrogate flagged as the credible next step.</p>
+
+<h3>Delivered</h3>
+<ul>
+<li>A validated VCC model of the Advancer A-500 tuned to 19.5 kW at 0°C, with peak cooling capacity verified close to specification across the -10°C case-study setpoint at 10°C ambient.</li>
+<li>A Cycle-Sentry-equivalent controller running inside Simulink, validated to behave consistently with the intended 0°C / +3°C hysteresis design and reusable on the Arduino side of the HiL system.</li>
+<li>A real-time-capable simulation that runs on commodity hardware at a 0.1 s fixed timestep — the prerequisite for using the model as the simulated machine in a HiL test loop.</li>
+<li>A diagnosed limitation in the trailer cargo-box dynamics, root-caused to the Simscape block's instantaneous-equilibrium assumption rather than left as an unexplained discrepancy.</li>
+</ul>
+
+<h3>Recognition</h3>
+<p>M.E. thesis at University of Galway (Module ME5110), industry-sponsored by Thermo King / Trane Technologies (Galway). Supervised by Mr. Padraig Conneely with industry advisor Marcus O'Mahony at Thermo King. Submitted 31st March 2025.</p>`,
+    images: [],
+  },
+  {
     title: "ML-Accelerated Aeroelastic Modelling of Onshore Wind Turbines",
     description:
       "Literature review and research study proposal identifying machine learning as the unexploited lever for breaking computational cost barriers in wind turbine simulation. Proposed ML-integration programme targeting 2.3–3.1× speed-ups through CFD-ML coupling, neural-network turbulence closures, and surrogate FEM. Graded 98% — highest in cohort, subsequently adopted as reference document for master's research projects.",
