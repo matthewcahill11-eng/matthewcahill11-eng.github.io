@@ -58,6 +58,51 @@ export const projectsDatabase: ProjectData[] = [
     images: [],
   },
   {
+    title: "Master's Thesis WP2: Arduino-based HiL Simulator for Transport Refrigeration",
+    description:
+      "Built the first Arduino-based Hardware-in-the-Loop simulator for transport refrigeration controls — a two-Arduino rig that lets a real embedded controller interact with a Simulink VCC model via emulated PT1000 RTD sensors. 0.92°C RMSE across operating range.",
+    tags: ["Arduino", "HiL", "Embedded Systems", "SPI", "Control Systems", "Sensor Emulation", "C++"],
+    date: "M.E. Mechanical Engineering, University of Galway",
+    slug: "masters-thesis-wp2",
+    section: "Engineering",
+    headline: true,
+    content: `<h2>Master's Thesis Work Package 2: Arduino-based Hardware-in-the-Loop Simulator for Transport Refrigeration Controls</h2>
+<p><strong>M.E. thesis (WP2), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
+
+<p>Transport refrigeration controls development is gated by long, fuel-burning bench tests on real refrigeration units — a constraint Hardware-in-the-Loop (HiL) testing has solved in automotive but never been demonstrated for transport refrigeration. WP2 of this thesis designed and built the prototype HiL simulator: a two-Arduino rig that lets a real embedded controller interact with a Simulink vapour-compression-cycle model as if it were wired into a real Advancer A-500.</p>
+
+<p><strong>Result: 0.92°C RMSE between Simulink-commanded temperature and Arduino-measured temperature across the operating wiper range; ±1°C accuracy on temperature emulation; correct On-Off control switching validated against the Simulink setpoint at −10°C with error well below the RMSE.</strong></p>
+
+<p>The architecture follows the Gambino et al engine-HiL pattern, adapted to the PT1000 RTD sensor stack the Advancer uses for return and delivered air temperature.</p>
+
+<h3>Scope of the work</h3>
+<ul>
+<li><strong>HiL front-end (Arduino #1)</strong> — A digital potentiometer (MCP4261) emulates the resistance behaviour of the PT1000 RTDs on the return and delivered air lines. Simulink runs in Connected I/O mode and writes the model's predicted air temperatures to the Arduino each timestep.</li>
+<li><strong>Temperature-to-wiper mapping</strong> — A calibrated algorithm converts a model-predicted temperature into a wiper position, with the wiper position translated into the SPI command frame the MCP4261 expects.</li>
+<li><strong>Embedded controller (Arduino #2)</strong> — Runs an On-Off hysteresis controller behaviourally equivalent to Thermo King's Cycle Sentry. Reads the potentiometer resistance via a voltage divider, computes temperature, and outputs the engine On/Off signal back into Simulink.</li>
+<li><strong>Operating-range restriction (wiper positions 50–255)</strong> — Characterisation testing showed the voltage divider behaves linearly above wiper position 50 but exponentially below it. The operating range was restricted to the linear region rather than fitted with a piecewise correction — a deliberate scope call for a feasibility prototype.</li>
+<li><strong>Solver and timestep</strong> — Simulink runs at a 0.1 s timestep with the ode1 Euler-forwards solver for real-time compatibility; backwards Euler was trialled and discarded after tick-missed errors.</li>
+</ul>
+
+<h3>How the operating-range decision surfaced</h3>
+<p>The voltage divider feeding the controller Arduino showed a clean linear voltage-to-wiper relationship at high wiper values and an exponential rise at the low end. Tracing this back to the resistance-divider equation, the cause is straightforward — as the wiper resistance R₂ approaches zero the divider output blows up — so the nonlinearity is intrinsic to the topology, not a calibration artefact. The engineering call was to restrict the operating range to wiper positions 50–255 where the relationship is linear, accept the reduced span, and document the constraint. This is what the prototype is for: surfacing the integration realities of the sensor-emulation pipeline before a deployable design picks the topology.</p>
+
+<h3>Delivered</h3>
+<ul>
+<li>Working two-Arduino HiL rig integrated with the Simulink VCC model via Connected I/O, with the model's predicted air temperatures driving the emulated PT1000 resistance in real time.</li>
+<li>0.921768°C RMSE across the operating wiper range, computed across all sample points with the temperature control signal inside the 10°C to −30°C bounds.</li>
+<li>Control-signal validation at the −10°C setpoint case: the Arduino controller correctly produced the On-Off engine command against the Simulink setpoint, with switching error well below the RMSE.</li>
+<li><strong>Novel pipeline contribution</strong> — bridging a Simulink-modelled VCC with a real embedded controller via emulated sensors is the specific gap in the transport-refrigeration HiL literature this WP fills. Existing work covered partial load emulation (Otten et al) and small commercial fridges (Ramaswamy et al); neither closed the loop the way this rig does.</li>
+</ul>
+
+<h3>Honest framing</h3>
+<p>The system is a prototype, not a deployed product. ATP certification for refrigerated transport allows ±0.5°C drift; the 0.92°C RMSE is below ATP tolerance for a prototype but would not be application-ready without further reduction. An industrial build using Speedgoat resistance I/O boards (spec'd to ±1 Ω accuracy) would meet ATP — this Arduino prototype is the feasibility demonstrator that justifies that investment.</p>
+
+<h3>Recognition</h3>
+<p>WP2 of an M.E. thesis at University of Galway, industry-sponsored by Thermo King / Trane Technologies. Supervised by Mr. Padraig Conneely (University of Galway) with industry advisor Marcus O'Mahony (Thermo King). The thesis is the first reported demonstration of HiL simulation applied to transport refrigeration.</p>`,
+    images: [],
+  },
+  {
     title: "ML-Accelerated Aeroelastic Modelling of Onshore Wind Turbines",
     description:
       "Literature review and research study proposal identifying machine learning as the unexploited lever for breaking computational cost barriers in wind turbine simulation. Proposed ML-integration programme targeting 2.3–3.1× speed-ups through CFD-ML coupling, neural-network turbulence closures, and surrogate FEM. Graded 98% — highest in cohort, subsequently adopted as reference document for master's research projects.",
