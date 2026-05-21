@@ -111,6 +111,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp3",
     section: "Engineering",
     headline: true,
+    images: ["/wp3 1.png", "/wp3 2.png"],
     content: `<h2>Master's Thesis Work Package 3: Experimental Validation of a Prototype HiL Simulator Against a Real Thermo King Advancer</h2>
 <p><strong>M.E. thesis (WP3), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
@@ -146,7 +147,6 @@ export const projectsDatabase: ProjectData[] = [
 
 <h3>Recognition</h3>
 <p>WP3 of an M.E. thesis at University of Galway, industry-sponsored by Thermo King / Trane Technologies. Supervised by Mr. Padraig Conneely (University of Galway) with industry advisor Marcus O'Mahony (Thermo King). The thesis is the first reported demonstration of HiL simulation applied to transport refrigeration.</p>`,
-    images: [],
   },
   {
     title: "ML-Accelerated Aeroelastic Modelling of Onshore Wind Turbines",
