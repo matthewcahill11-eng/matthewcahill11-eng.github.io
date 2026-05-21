@@ -111,7 +111,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp3",
     section: "Engineering",
     headline: true,
-    images: ["/wp3 1.png", "/wp3 2.png"],
+    images: ["/wp3 1.png", "/wp3 2.png", "/wp3 3.png"],
     content: `<h2>Master's Thesis Work Package 3: Experimental Validation of a Prototype HiL Simulator Against a Real Thermo King Advancer</h2>
 <p><strong>M.E. thesis (WP3), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
