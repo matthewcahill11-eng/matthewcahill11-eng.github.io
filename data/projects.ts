@@ -24,6 +24,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp1",
     section: "Engineering",
     headline: true,
+    images: ["/wp1 image.png"],
     content: `<h2>Master's Thesis Work Package 1: Simulink Model of the Thermo King Advancer Vapour Compression Cycle</h2>
 <p><strong>M.E. Mechanical Engineering, University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
@@ -55,7 +56,6 @@ export const projectsDatabase: ProjectData[] = [
 
 <h3>Recognition</h3>
 <p>M.E. thesis at University of Galway (Module ME5110), industry-sponsored by Thermo King / Trane Technologies (Galway). Supervised by Mr. Padraig Conneely with industry advisor Marcus O'Mahony at Thermo King. Submitted 31st March 2025.</p>`,
-    images: [],
   },
   {
     title: "Master's Thesis WP2: Arduino-based HiL Simulator for Transport Refrigeration",
