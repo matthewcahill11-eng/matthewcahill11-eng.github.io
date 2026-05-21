@@ -18,7 +18,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "Master's Thesis WP1: Simulink Model of Thermo King Advancer VCC",
     description:
-      "Built a real-time-capable Simulink and Simscape Fluids model of the Thermo King Advancer A-500 vapour compression cycle, tuned to 19.5 kW cooling capacity at 0°C. Part of the first hardware-in-the-loop simulator demonstrated for transport refrigeration in the literature.",
+      "Built real-time Simulink/Simscape model of Thermo King Advancer A-500 for HiL testing:\n• 19.5 kW cooling capacity at 0°C validated against bench data\n• Real-time execution at 0.1s timestep on commodity hardware\n• Full evaporator, trailer thermal network, and Cycle-Sentry controller\n• First HiL simulator demonstrated for transport refrigeration",
     tags: ["Simulink", "Simscape", "HiL", "Digital Twin", "VCC", "Real-Time Simulation", "MATLAB"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp1",
@@ -60,7 +60,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "Master's Thesis WP2: Arduino-based HiL Simulator for Transport Refrigeration",
     description:
-      "Built the first Arduino-based Hardware-in-the-Loop simulator for transport refrigeration controls — a two-Arduino rig that lets a real embedded controller interact with a Simulink VCC model via emulated PT1000 RTD sensors. 0.92°C RMSE across operating range.",
+      "Two-Arduino HiL rig bridging Simulink VCC model with real embedded controller:\n• 0.92°C RMSE temperature emulation via MCP4261 digital potentiometer\n• PT1000 RTD sensor emulation with SPI control and voltage divider\n• Validated On-Off control switching at −10°C setpoint\n• First demonstration of HiL for transport refrigeration controls",
     tags: ["Arduino", "HiL", "Embedded Systems", "SPI", "Control Systems", "Sensor Emulation", "C++"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp2",
@@ -105,7 +105,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "Master's Thesis WP3: Experimental Validation of Prototype HiL Simulator",
     description:
-      "Ran ground-truth bench testing on a real Advancer A-500 at Thermo King's Galway R&D facility, validated the Simulink model and Arduino HiL system against measured data, and root-caused two discrepancies — a 4.32× modulation acceleration and ~50% cooling overshoot.",
+      "Ground-truth validation of HiL system against real Advancer A-500:\n• 6-hour bench test at Thermo King Galway with MultiDAC data acquisition\n• Behavioural validation confirmed at programme level\n• 4.32× modulation acceleration root-caused to Simscape assumption\n• ~50% cooling overshoot attributed to controller and refrigerant differences",
     tags: ["Experimental Validation", "Data Acquisition", "Root Cause Analysis", "MultiDAC", "Bench Testing"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp3",
@@ -151,7 +151,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "ML-Accelerated Aeroelastic Modelling of Onshore Wind Turbines",
     description:
-      "Literature review and research study proposal identifying machine learning as the unexploited lever for breaking computational cost barriers in wind turbine simulation. Proposed ML-integration programme targeting 2.3–3.1× speed-ups through CFD-ML coupling, neural-network turbulence closures, and surrogate FEM. Graded 98% — highest in cohort, subsequently adopted as reference document for master's research projects.",
+      "Literature review proposing ML to break computational barriers in wind turbine simulation:\n• 2.3–3.1× speed-up targets via CFD-ML coupling and neural turbulence closures\n• Graded 98% — highest in cohort\n• Adopted as reference document for master's research projects\n• Identified ML as unexploited lever for surrogate FEM integration",
     tags: ["CFD", "FEM", "Machine Learning", "Aeroelastics", "Research"],
     date: "MEng, University of Galway",
     slug: "wind-turbine-aeroelastic",
@@ -167,7 +167,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "Physics based real time ML model - Patent Pending",
     description:
-      "Built a real-time autoregressive LSTM that solves a thermo-fluid simulation problem existing ML architectures couldn't handle — adapting Google DeepMind's early chatbot architecture to work on continuous physics.",
+      "Real-time autoregressive LSTM for thermo-fluid simulation in HiL environment:\n• 40MB RAM footprint, stable across 150,000+ autoregressive iterations\n• 95% dynamics correlation, 90% magnitude — before large-scale fine-tuning\n• Passed Trane IP council first review in 4 months as graduate\n• Clean ONNX export path to embedded C++ deployment",
     section: "Trane Technologies",
     headline: true,
     content: `<h2>R&D Patent: Real-Time Autoregressive ML for Multiphysics Reduced-Order Modelling</h2>
@@ -215,7 +215,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "On-Prem Cursor",
     description:
-      "Built an on-prem, IP-safe agentic coding platform (Ollama + open-source VS Code agent + Open WebUI) for a Fortune 500 hardware R&D team at Trane — adopted by 2–5 engineers, used on departmental ML pipelines.",
+      "Self-hosted agentic coding platform for Fortune 500 R&D team:\n• Ollama + open-source VS Code agent + Open WebUI stack\n• Adopted by 2–5 engineers on departmental ML pipelines\n• Cursor-equivalent functionality with zero data egress\n• Triggered internal review into team-wide Claude adoption",
     section: "Trane Technologies",
     headline: true,
     content: `<h2>Side Project: On-Prem Agentic Coding Platform</h2>
@@ -260,7 +260,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "TK Telematics",
     description:
-      "Led OTA telematics validation campaign as a graduate that <strong>saved Trane Technologies $2M+</strong> in manual dealer campaigns — took ownership when previous launch cost $2M without OTA capability, delivered 100% pass rate across 20+ tests, shipped on time for flagship V1 release.",
+      "Led OTA telematics validation campaign as graduate, saving $2M+ in manual dealer campaigns:\n• 100% failure → 100% pass rate across 20+ tests in 2 months\n• Diagnosed server prioritization blocker via CAN bus log analysis\n• Sole communication point between Connected Solutions and R&D Lead\n• Shipped on time for flagship V1 release",
     section: "Trane Technologies",
     headline: true,
     content: `<h2>Graduate Engineer, Trane Technologies</h2>
@@ -300,7 +300,7 @@ export const projectsDatabase: ProjectData[] = [
   // Personal Projects
   {
     title: "Hallbach Motor",
-    description: "Independent research project developing the first electromagnet Halbach array for motor stators. 30% increase in peak torque vs standard pole array, validated through Ansys Maxwell CEM modelling and 3D-printed prototype. Selected for Start100 accelerator with €4,000 funding, offered PhD route and spinout path.",
+    description: "First electromagnet Halbach array for motor stators:\n• 30% peak torque increase vs standard pole array (1.9 Nm vs 0.5 Nm)\n• Validated via Ansys Maxwell CEM and 3D-printed prototype\n• Selected for Start100 accelerator with €4,000 funding\n• Offered funded PhD route and college-backed spinout path",
     headline: true,
     content: `<h3>Independent Research Project: Halbach vs Standard Electromagnet Array for Motor Stators</h3>
 <p><strong>Third-year summer research project, undergraduate engineering — selected for college startup accelerator, offered onward PhD route and spinout path</strong></p>
@@ -365,7 +365,7 @@ export const projectsDatabase: ProjectData[] = [
   },
   {
     title: "YC AI Startup School",
-    description: "Hand-picked attendee for Y Combinator's inaugural AI Startup School — one of 2,500 top CS undergrads, masters, and PhD candidates in AI worldwide. Flown to San Francisco for two-day conference at Pier 48 with talks from Sam Altman, Elon Musk, Satya Nadella, Andrej Karpathy, Fei-Fei Li, Andrew Ng, John Jumper, and Aravind Srinivas.",
+    description: "Hand-picked for Y Combinator's inaugural AI Startup School:\n• 1 of 4 Irish attendees from 2,500 globally selected CS/ML students\n• Two-day conference at Pier 48, San Francisco (June 2025)\n• Talks from Altman, Musk, Nadella, Karpathy, Fei-Fei Li, Ng, Jumper\n• $25k AWS credits + direct VC introductions",
     headline: true,
     content: `<h2>Selection: YC AI Startup School 2025</h2>
 <p><strong>Hand-picked attendee, Y Combinator AI Startup School — San Francisco, June 2025</strong></p>
@@ -545,7 +545,7 @@ export const projectsDatabase: ProjectData[] = [
   },
   {
     title: "B.E Capstone Machine Design Project",
-    description: "Led a four-person team designing a fully automated 1000 kg EV battery swap system (University of Galway Machine Design Project, 2023); personally owned the scissor lift sub-assembly across kinematics, FEA, hydraulics and full CAD. 300+ part assembly.",
+    description: "Led 4-person team designing fully automated 1000 kg EV battery swap system:\n• Owned scissor lift sub-assembly: kinematics, FEA, hydraulics, full CAD\n• 300+ part assembly for University of Galway capstone (2023)\n• Designed automated lifting and battery exchange mechanism\n• Complete hydraulic system design and structural validation",
     content: "",
     tags: ["Mechanical Design", "CAD", "FEA", "Hydraulics", "Team Lead", "Project Management"],
     date: "University of Galway, April 2023",
