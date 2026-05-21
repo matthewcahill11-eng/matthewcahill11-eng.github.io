@@ -66,6 +66,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp2",
     section: "Engineering",
     headline: true,
+    images: ["/wp2.png"],
     content: `<h2>Master's Thesis Work Package 2: Arduino-based Hardware-in-the-Loop Simulator for Transport Refrigeration Controls</h2>
 <p><strong>M.E. thesis (WP2), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
@@ -100,7 +101,6 @@ export const projectsDatabase: ProjectData[] = [
 
 <h3>Recognition</h3>
 <p>WP2 of an M.E. thesis at University of Galway, industry-sponsored by Thermo King / Trane Technologies. Supervised by Mr. Padraig Conneely (University of Galway) with industry advisor Marcus O'Mahony (Thermo King). The thesis is the first reported demonstration of HiL simulation applied to transport refrigeration.</p>`,
-    images: [],
   },
   {
     title: "Master's Thesis WP3: Experimental Validation of Prototype HiL Simulator",
