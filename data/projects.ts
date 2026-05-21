@@ -66,7 +66,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "masters-thesis-wp2",
     section: "Engineering",
     headline: true,
-    images: ["/wp2.png"],
+    images: ["/wp2.png", "/wp2 2.png"],
     content: `<h2>Master's Thesis Work Package 2: Arduino-based Hardware-in-the-Loop Simulator for Transport Refrigeration Controls</h2>
 <p><strong>M.E. thesis (WP2), University of Galway — industry-sponsored by Thermo King / Trane Technologies</strong></p>
 
