@@ -30,9 +30,10 @@ export interface ProjectData {
 
 interface ProjectCardProps {
   project: ProjectData;
+  compact?: boolean;
 }
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, compact = false }: ProjectCardProps) {
   const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -82,7 +83,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </CardHeader>
         <CardContent className="flex-grow flex flex-col">
           {/* Image carousel */}
-          {project.images && project.images.length > 0 && (
+          {!compact && project.images && project.images.length > 0 && (
             <div className="relative mb-3 aspect-video bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden">
               {project.images.map((img, idx) => (
                 <div
@@ -121,14 +122,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </div>
           )}
 
-          <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{project.description}</p>
-          <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, i) => (
-              <Badge key={i} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          <p className={`text-sm text-muted-foreground mb-3 ${compact ? 'line-clamp-2' : 'line-clamp-3'}`}>{project.description}</p>
+          {!compact && (
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag, i) => (
+                <Badge key={i} variant="secondary">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          )}
         </CardContent>
       </div>
     </Card>

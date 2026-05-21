@@ -32,7 +32,7 @@ export const projectsDatabase: ProjectData[] = [
     ],
   },
   {
-    title: "AI Physics Model - Patent Pending",
+    title: "Physics based real time ML model - Patent Pending",
     description:
       "Built a real-time autoregressive LSTM that solves a thermo-fluid simulation problem existing ML architectures couldn't handle — adapting Google DeepMind's early chatbot architecture to work on continuous physics.",
     section: "Trane Technologies",
@@ -84,6 +84,7 @@ export const projectsDatabase: ProjectData[] = [
     description:
       "Built an on-prem, IP-safe agentic coding platform (Ollama + open-source VS Code agent + Open WebUI) for a Fortune 500 hardware R&D team at Trane — adopted by 2–5 engineers, used on departmental ML pipelines.",
     section: "Trane Technologies",
+    headline: true,
     content: `<h2>Side Project: On-Prem Agentic Coding Platform</h2>
 <p><strong>Self-initiated tooling, Trane Technologies — adopted by 2–5 engineers; triggered an internal review into team-wide Claude adoption</strong></p>
 
@@ -128,6 +129,7 @@ export const projectsDatabase: ProjectData[] = [
     description:
       "Led OTA telematics validation campaign as a graduate that <strong>saved Trane Technologies $2M+</strong> in manual dealer campaigns — took ownership when previous launch cost $2M without OTA capability, delivered 100% pass rate across 20+ tests, shipped on time for flagship V1 release.",
     section: "Trane Technologies",
+    headline: true,
     content: `<h2>Graduate Engineer, Trane Technologies</h2>
 
 <p>A previous product launch without OTA update capability had cost the business <strong>over $2M</strong> in manual dealer workshop campaigns. With no existing validation campaign, no oversight, and the product approaching release, leadership identified that OTA capability had been overlooked and added late as a requirement. I stepped up as a graduate to own and lead the campaign from scratch, and subsequently delivered it in <strong>two months</strong>.</p>
@@ -166,6 +168,7 @@ export const projectsDatabase: ProjectData[] = [
   {
     title: "Hallbach Motor",
     description: "Independent research project developing the first electromagnet Halbach array for motor stators. 30% increase in peak torque vs standard pole array, validated through Ansys Maxwell CEM modelling and 3D-printed prototype. Selected for Start100 accelerator with €4,000 funding, offered PhD route and spinout path.",
+    headline: true,
     content: `<h3>Independent Research Project: Halbach vs Standard Electromagnet Array for Motor Stators</h3>
 <p><strong>Third-year summer research project, undergraduate engineering — selected for college startup accelerator, offered onward PhD route and spinout path</strong></p>
 
@@ -198,8 +201,39 @@ export const projectsDatabase: ProjectData[] = [
     images: ["/image.png", "/image 1.png", "/image 2.png", "/image 3.png"],
   },
   {
+    title: "IDA Eco AI Hackathon - 2nd Place",
+    description: "Secured 2nd place at IDA Eco AI Hackathon.",
+    content: "",
+    tags: ["Hackathon", "AI", "Sustainability", "IDA"],
+    date: "IDA Ireland",
+    slug: "ida-eco-ai-hackathon",
+    section: "Personal Projects",
+    images: [],
+  },
+  {
+    title: "Forge Robotics: Cloud Inference Pipeline for Robotics RL Models",
+    description: "Built cloud inference pipeline for deploying reinforcement learning models on robotic systems.",
+    content: "",
+    tags: ["Robotics", "RL", "Cloud", "MLOps", "Inference Pipeline"],
+    date: "Forge Robotics",
+    slug: "forge-cloud-inference",
+    section: "Personal Projects",
+    images: [],
+  },
+  {
+    title: "Forge Robotics: Vision Pipeline for Agentic Welding",
+    description: "Developed vision pipeline for autonomous welding robotics system.",
+    content: "",
+    tags: ["Computer Vision", "Robotics", "Welding", "AI", "Agentic Systems"],
+    date: "Forge Robotics",
+    slug: "forge-vision-pipeline",
+    section: "Personal Projects",
+    images: [],
+  },
+  {
     title: "YC AI Startup School",
     description: "Hand-picked attendee for Y Combinator's inaugural AI Startup School — one of 2,500 top CS undergrads, masters, and PhD candidates in AI worldwide. Flown to San Francisco for two-day conference at Pier 48 with talks from Sam Altman, Elon Musk, Satya Nadella, Andrej Karpathy, Fei-Fei Li, Andrew Ng, John Jumper, and Aravind Srinivas.",
+    headline: true,
     content: `<h2>Selection: YC AI Startup School 2025</h2>
 <p><strong>Hand-picked attendee, Y Combinator AI Startup School — San Francisco, June 2025</strong></p>
 
@@ -227,6 +261,101 @@ export const projectsDatabase: ProjectData[] = [
     slug: "yc-ai-startup-school",
     section: "Scholarships Awards honous & recognitionh",
     images: ["/social_media_aisus-61de8e53bc438272.png"],
+  },
+  {
+    title: "UoG Excellence Scholarship",
+    description: "Master's scholarship awarded for obtaining a 1:1 grade in undergraduate degree. Maintained 1:1 grade (First Class Honours) for every semester of college. Achieved straight As in final year and master's year.",
+    content: `<h2>UoG Excellence Scholarship</h2>
+<ul>
+<li>Master's scholarship awarded for obtaining a 1:1 grade in undergraduate degree</li>
+<li>Maintained 1:1 grade (First Class Honours) for every semester of college</li>
+<li>Achieved straight As in final year and master's year</li>
+</ul>`,
+    tags: ["Scholarship", "Academic Excellence", "First Class Honours"],
+    date: "University of Galway",
+    slug: "uog-excellence-scholarship",
+    section: "Scholarships Awards honous & recognitionh",
+    images: ["/nuig-logo.png"],
+  },
+  {
+    title: "Fully Funded PhD Scholarship Offer",
+    description: "Offered fully funded PhD scholarship for joint research project between Trane Technologies and University of Galway for developing a robotic application for induction brazing.",
+    content: "",
+    tags: ["PhD", "Research", "Robotics", "Induction Brazing"],
+    date: "University of Galway & Trane Technologies",
+    slug: "phd-scholarship-offer",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "EF The Bridge",
+    description: "Joined EF The Bridge hyper-selective program with a <1.5% acceptance rate.",
+    content: "",
+    tags: ["Entrepreneurship", "The Bridge", "EF", "Startups"],
+    date: "Entrepreneur First",
+    slug: "ef-the-bridge",
+    section: "Scholarships Awards honous & recognitionh",
+    images: ["/bridge-logo.png"],
+  },
+  {
+    title: "Ireland 2050 Financial Modelling Award",
+    description: "Awarded for financial modelling work on Ireland's 2050 energy transition.",
+    content: "",
+    tags: ["Energy", "Financial Modelling", "Sustainability", "Award"],
+    date: "Irish Energy Institute",
+    slug: "ireland-2050-award",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "Bending Spoons Advanced Interview Offer",
+    description: "Invited to advanced interview stage at Bending Spoons.",
+    content: "",
+    tags: ["Software Engineering", "Interview", "Tech"],
+    date: "Bending Spoons",
+    slug: "bending-spoons-interview",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "NDRC AI Venture Forge Offer",
+    description: "Offered place in NDRC AI Venture Forge program.",
+    content: "",
+    tags: ["AI", "Venture", "Entrepreneurship", "NDRC"],
+    date: "NDRC",
+    slug: "ndrc-ai-venture-forge",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "Hult Prize Nationals Invite",
+    description: "Invited to compete at Hult Prize National Finals.",
+    content: "",
+    tags: ["Entrepreneurship", "Competition", "Social Impact"],
+    date: "Hult Prize",
+    slug: "hult-prize-nationals",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "Industry Funded Masters Thesis + Prototype Commissioning",
+    description: "Masters thesis and prototype commissioning funded by industry partner.",
+    content: "",
+    tags: ["Research", "Industry Partnership", "Prototype", "Masters Thesis"],
+    date: "University of Galway",
+    slug: "industry-funded-thesis",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
+  },
+  {
+    title: "Co-founded Forge Robotics - Accepted to Y Combinator S25",
+    description: "Co-founded Forge Robotics - Accepted to Y Combinator S25 shortly after my departure for family/health reasons.",
+    content: "",
+    tags: ["Startup", "Y Combinator", "Robotics", "Co-founder"],
+    date: "Forge Robotics",
+    slug: "forge-yc",
+    section: "Scholarships Awards honous & recognitionh",
+    images: [],
   },
   {
     title: "CFD Modelling of Air Flow Past a 2D Turbine Cascade",
@@ -292,32 +421,32 @@ export const projectsDatabase: ProjectData[] = [
     headline: true,
     images: ["/image-013.png", "/image-014.png", "/image-015.png", "/image-016.png", "/image-017.png", "/image-018.png"],
   },
-  {
-    title: "Boxing in Pink",
-    description: "Owned marketing for a student charity boxing tournament while competing on the card — 400 tickets sold, €13,000 raised for breast cancer research, Monster Energy secured as headline sponsor.",
-    content: `<h2>Head of Marketing, University Boxing Club</h2>
-<p><strong>Student-run charity tournament for breast cancer research</strong></p>
+  // {
+  //   title: "Boxing in Pink",
+  //   description: "Owned marketing for a student charity boxing tournament while competing on the card — 400 tickets sold, €13,000 raised for breast cancer research, Monster Energy secured as headline sponsor.",
+  //   content: `<h2>Head of Marketing, University Boxing Club</h2>
+  // <p><strong>Student-run charity tournament for breast cancer research</strong></p>
 
-<p>Owned the marketing function for a student boxing tournament raising money for breast cancer research, while also competing as one of the boxers on the card. The brief was to fill the venue and maximise the donation — both depended on ticket sales and sponsorship moving in parallel.</p>
+  // <p>Owned the marketing function for a student boxing tournament raising money for breast cancer research, while also competing as one of the boxers on the card. The brief was to fill the venue and maximise the donation — both depended on ticket sales and sponsorship moving in parallel.</p>
 
-<p><strong>Result: 400 tickets sold, €13,000 raised for charity, Monster Energy secured as headline sponsor.</strong></p>
+  // <p><strong>Result: 400 tickets sold, €13,000 raised for charity, Monster Energy secured as headline sponsor.</strong></p>
 
-<h3>Scope of the work</h3>
-<ul>
-<li><strong>Sponsorship</strong> — Monster Energy. Pitched and closed a Monster Energy sponsorship as the headline commercial partner, covering production costs and freeing ticket revenue for the charity total.</li>
-<li><strong>Social media campaign</strong> — Produced short-form video content for the run-up to the event; several pieces went viral within the student audience and drove the bulk of late ticket sales.</li>
-<li><strong>Print and venue collateral</strong> — Designed the poster set used across campus and venue branding on the night.</li>
-<li><strong>Ticket sales</strong> — 400 tickets shifted through the campaign — the funnel that converted the €13,000 charity total.</li>
-</ul>
+  // <h3>Scope of the work</h3>
+  // <ul>
+  // <li><strong>Sponsorship</strong> — Monster Energy. Pitched and closed a Monster Energy sponsorship as the headline commercial partner, covering production costs and freeing ticket revenue for the charity total.</li>
+  // <li><strong>Social media campaign</strong> — Produced short-form video content for the run-up to the event; several pieces went viral within the student audience and drove the bulk of late ticket sales.</li>
+  // <li><strong>Print and venue collateral</strong> — Designed the poster set used across campus and venue branding on the night.</li>
+  // <li><strong>Ticket sales</strong> — 400 tickets shifted through the campaign — the funnel that converted the €13,000 charity total.</li>
+  // </ul>
 
-<h3>Competing on the night</h3>
-<p>Also fought on the card the same evening. Splitting attention between running the marketing for the event and preparing to compete in it forced sharp prioritisation in the final week — sponsorship and ticket commitments were locked early so the last days could be spent training without the campaign slipping.</p>`,
-    tags: ["Marketing", "Event Management", "Charity", "Sponsorship", "Boxing"],
-    date: "University of Galway",
-    slug: "boxing-in-pink",
-    section: "Sports & Extra",
-    images: ["/image-025.png", "/image-026.png"],
-  },
+  // <h3>Competing on the night</h3>
+  // <p>Also fought on the card the same evening. Splitting attention between running the marketing for the event and preparing to compete in it forced sharp prioritisation in the final week — sponsorship and ticket commitments were locked early so the last days could be spent training without the campaign slipping.</p>`,
+  //   tags: ["Marketing", "Event Management", "Charity", "Sponsorship", "Boxing"],
+  //   date: "University of Galway",
+  //   slug: "boxing-in-pink",
+  //   section: "Sports & Extra",
+  //   images: ["/image-025.png", "/image-026.png"],
+  // },
   {
     title: "Student Success Panel Speaker",
     description: "Invited as one of 20 students to speak to the incoming class of 1000 STEM students, on study and student success tips.",

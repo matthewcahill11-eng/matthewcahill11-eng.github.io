@@ -8,11 +8,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 interface ProjectSectionCarouselProps {
   title: string;
   projects: ProjectData[];
+  compact?: boolean;
 }
 
 export default function ProjectSectionCarousel({
   title,
   projects,
+  compact = false,
 }: ProjectSectionCarouselProps) {
   const [offset, setOffset] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -24,7 +26,7 @@ export default function ProjectSectionCarousel({
   const duplicatedProjects = [...projects, ...projects];
 
   // Card width + gap (approximate)
-  const cardWidth = 400; // Adjust based on your card size
+  const cardWidth = compact ? 280 : 400; // Smaller cards in compact mode
   const gap = 24; // gap-6 = 24px
   const scrollSpeed = 0.02; // pixels per millisecond (slow)
 
@@ -146,7 +148,7 @@ export default function ProjectSectionCarousel({
               className="flex-shrink-0"
               style={{ width: `${cardWidth}px` }}
             >
-              <ProjectCard project={project} />
+              <ProjectCard project={project} compact={compact} />
             </div>
           ))}
         </div>
