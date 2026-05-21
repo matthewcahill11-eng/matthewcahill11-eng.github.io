@@ -62,8 +62,8 @@ export default function ProjectPage({
             <div className="relative w-full h-full max-w-[400px] mx-auto">
               {project.images.map((img, idx) => {
                 const isCurrent = idx === currentSlide;
-                const nextIndex = (currentSlide + 1) % project.images.length;
-                const thirdIndex = (currentSlide + 2) % project.images.length;
+                const nextIndex = (currentSlide + 1) % project.images!.length;
+                const thirdIndex = (currentSlide + 2) % project.images!.length;
                 const isNext = idx === nextIndex;
                 const isThird = idx === thirdIndex;
 
