@@ -165,30 +165,30 @@ export const projectsDatabase: ProjectData[] = [
     ],
   },
   {
-    title: "Physically-Based Yield Strength Modelling for Low-Carbon Steels",
-    description: "Process–structure–property model predicting steel yield strength from chemistry and heat treatment:\n• Four-stage model calibrated against five literature sources\n• Mechanistic strengthening contributions (Taylor, Hall–Petch, Naylor, Orowan)\n• Derived activation energy Q = 104.85 kJ/mol for austenite grain growth\n• Validated against independent X-80 linepipe HAZ dataset",
-    content: `<h2>Physically-Based Yield Strength Modelling for Low-Carbon Steels</h2>
-<p><strong>4th-year Mechanical Engineering coursework, University of Galway — supervised by Dr. Richard Barrett</strong></p>
+    title: "Physically-Based Yield Strength Modelling Tool for Low-Carbon Steels",
+    description: "Process–structure–property model predicting steel yield strength from chemistry and heat treatment:\n• Four-stage model calibrated against five literature sources, validated against sixth\n• Six independent strengthening mechanisms (Taylor, Hall–Petch, Naylor, Orowan)\n• Derived activation energy Q = 104.85 kJ/mol for austenite grain growth\n• Independent validation against X-80 linepipe HAZ at 1000 K/s heating ramp",
+    content: `<h2>Physically-Based Yield Strength Modelling Tool for Low-Carbon Steels</h2>
+<p><strong>M.E. Mechanical Engineering research project, University of Galway — supervised by Dr. Richard Barrett</strong></p>
 
-<p>Yield strength in steel isn't a material constant — it's the stress required to drive dislocations through the microstructure, which itself is set by chemical composition and heat treatment history. This project built a process–structure–property tool in Octave that takes initial grain size, chemistry, and a heat treatment schedule, then predicts microstructural evolution (austenitisation, martensitic transformation) and the resulting yield strength from first principles.</p>
+<p>Yield strength in steel isn't a material constant — it's the stress required to drive dislocations through the microstructure, which itself is set by chemical composition and heat treatment history. This project built a process–structure–property modelling tool in Octave that takes initial grain size, chemistry, and a heat treatment schedule, then predicts microstructural evolution (austenitisation, martensitic transformation) and the resulting yield strength from first principles.</p>
 
-<p><strong>Result: four-stage model calibrated and validated against experimental data from five literature sources; RMS and linear summation strengthening models compared across equiaxed, hierarchical, and precipitate-containing microstructures.</strong></p>
+<p><strong>Result: four-stage mechanistic model calibrated against experimental data from five literature sources and validated against an independent sixth; linear summation and Kocks RMS strengthening models compared across equiaxed, hierarchical, and precipitate-containing microstructures.</strong></p>
 
-<p>The interesting move was treating yield strength as a sum of mechanistic contributions rather than fitting a black-box correlation. Each strengthening mechanism — Taylor hardening, Hall–Petch grain boundary, low-angle boundary (Naylor model), interstitial/substitutional solute, Orowan precipitate, intrinsic lattice friction — was modelled independently and then combined, so the model stays physically interpretable when composition or processing changes.</p>
+<p>The intellectual move was treating yield strength as a sum of physical mechanisms rather than fitting a black-box correlation. Each strengthening contribution — Taylor hardening, Hall–Petch grain boundary, low-angle boundary via the Naylor model, Gypen–Deruyttere interstitial/substitutional solute, Ashby–Orowan precipitate, intrinsic lattice friction — was implemented independently and then combined, so the model stays physically interpretable when composition or processing changes. That's the property that lets it generalise beyond its calibration set.</p>
 
 <h3>Scope of the work</h3>
 <ul>
-<li><strong>Strengthening physics</strong> — implemented Taylor, Hall–Petch, Naylor LAB, Gypen–Deruyttere solute, and Ashby–Orowan precipitate models; compared linear summation against Kocks RMS combination across four steels (pure Fe, Fe-0.2C, Fe-0.2C-2Mn, Fe-0.2C-2Mn with precipitates).</li>
-<li><strong>Austenite grain growth</strong> — derived activation energy Q = 104.85 kJ/mol and pre-exponential k₀ = 5.25 × 10⁻⁸ m²/s empirically from Kern et al. (2023) data via an Arrhenius linearisation of ln(K(T)) vs 1/T.</li>
-<li><strong>Martensite kinetics</strong> — fitted Mₛ = −490.78·C(wt%) + 927.26 from Morito et al. data and implemented Koistinen–Marburger-style volume fraction evolution over a cooling schedule.</li>
-<li><strong>Validation</strong> — tested the calibrated grain growth model against an independent dataset (Banerjee et al., non-isothermal X-80 linepipe HAZ) with a modified 1000 K/s heating ramp; predictions tracked experimental points across 1200–1700 K.</li>
-<li><strong>Sensitivity analysis</strong> — identified that grain growth predictions are highly sensitive to k₀ and moderately sensitive to Q, flagging where future data refinement matters most.</li>
+<li><strong>Strengthening physics</strong> — implemented six independent mechanisms and compared linear summation against Kocks RMS combination across four steels (pure Fe, Fe-0.2C, Fe-0.2C-2Mn, and Fe-0.2C-2Mn with precipitates).</li>
+<li><strong>Austenite grain growth</strong> — derived activation energy Q = 104.85 kJ/mol and pre-exponential k₀ = 5.25 × 10⁻⁸ m²/s empirically from Kern et al. (2023) data via Arrhenius linearisation of ln(K(T)) vs 1/T.</li>
+<li><strong>Martensite kinetics</strong> — fitted Mₛ = −490.78·C(wt%) + 927.26 from Morito et al. data, implemented Koistinen–Marburger-style volume fraction evolution over a cooling schedule, and benchmarked against two thermodynamically motivated models from Platl et al. (2020).</li>
+<li><strong>Independent validation</strong> — tested the calibrated grain growth model against Banerjee et al. (non-isothermal X-80 linepipe HAZ data) at a 1000 K/s heating ramp; predictions tracked experimental points across 1200–1700 K without recalibration.</li>
+<li><strong>Sensitivity analysis</strong> — identified that grain growth predictions are highly sensitive to k₀ and moderately sensitive to Q, flagging where additional experimental data would most improve the model.</li>
 </ul>
 
 <h3>How the model's limits surfaced</h3>
-<p>The Fe-0.2C predictions overshot experimental yield strength by ~400 MPa at small grain sizes, while Fe-0.2C-2Mn converged with the RMS model above 3 µm. The discrepancy traced to assumptions the model made for tractability: constant dislocation density, no residual austenite films between laths, no precipitate pinning of grain growth, and no martensite volume-fraction weighting in the strength calculation. The write-up names each assumption and proposes the specific extension that would close it.</p>`,
+<p>The Fe-0.2C predictions overshot experimental yield strength by ~400 MPa at small grain sizes, while Fe-0.2C-2Mn converged with the RMS model above 3 µm. The discrepancy traced to four tractability assumptions: constant dislocation density, no residual austenite films between laths, no precipitate pinning of grain growth, and no martensite volume-fraction weighting in the strength calculation. The write-up names each assumption and proposes the specific extension that would close it — making the model honest about its operating envelope rather than papering over the gaps.</p>`,
     tags: ["Material Science", "Octave", "Computational Modelling", "Metallurgy", "Microstructure", "Steel"],
-    date: "University of Galway, 4th Year",
+    date: "M.E., University of Galway",
     slug: "yield-strength-modelling",
     section: "Engineering",
     headline: true,
