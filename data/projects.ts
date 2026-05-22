@@ -329,6 +329,18 @@ export const projectsDatabase: ProjectData[] = [
   },
   // Personal Projects
   {
+    title: "GPU Accelerated Cloud Robot Training Pipeline",
+    description: "Built cloud pipeline hosting NVIDIA Omniverse for distributed robotics RL training:\n• Hosted NVIDIA Omniverse for distributed RL training\n• Successfully trained walk policy using NVIDIA spider example\n• Trained Franka Panda block stacking with RL\n• Cloud-based GPU acceleration for robotics simulation",
+    content: `<h2>GPU Accelerated Cloud Robot Training Pipeline</h2>
+<p>Built a cloud pipeline hosting NVIDIA Omniverse for distributed training of robotics reinforcement learning models. Successfully ran RL training for walk policy learning using NVIDIA spider example and Franka Panda block stacking RL training.</p>`,
+    tags: ["NVIDIA Omniverse", "Reinforcement Learning", "Robotics", "Cloud Computing", "GPU", "Franka Panda"],
+    date: "Personal Project",
+    slug: "gpu-cloud-robot-training",
+    section: "Personal Projects",
+    headline: true,
+    images: [],
+  },
+  {
     title: "Hallbach Motor",
     description: "First electromagnet Halbach array for motor stators:\n• 30% peak torque increase vs standard pole array (1.9 Nm vs 0.5 Nm)\n• Validated via Ansys Maxwell CEM and 3D-printed prototype\n• Selected for Start100 accelerator with €4,000 funding\n• Offered funded PhD route and college-backed spinout path",
     headline: true,
