@@ -338,7 +338,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "gpu-cloud-robot-training",
     section: "Personal Projects",
     headline: true,
-    images: [],
+    images: ["/Screenshot 2026-05-22 023325.png"],
   },
   {
     title: "Hallbach Motor",
