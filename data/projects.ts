@@ -364,7 +364,7 @@ export const projectsDatabase: ProjectData[] = [
     images: [],
   },
   {
-    title: "YC AI Startup School",
+    title: "Invited to Y Combinator AI Startup School 2025",
     description: "Hand-picked for Y Combinator's inaugural AI Startup School:\n• 1 of 4 Irish attendees from 2,500 globally selected CS/ML students\n• Two-day conference at Pier 48, San Francisco (June 2025)\n• Talks from Altman, Musk, Nadella, Karpathy, Fei-Fei Li, Ng, Jumper\n• $25k AWS credits + direct VC introductions",
     headline: true,
     content: `<h2>Selection: YC AI Startup School 2025</h2>
