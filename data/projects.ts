@@ -192,7 +192,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "yield-strength-modelling",
     section: "Engineering",
     headline: true,
-    images: ["/Screenshot 2026-05-22 022301.png", "/Screenshot 2026-05-22 022206.png", "/Screenshot 2026-05-22 022233.png"],
+    images: ["/Screenshot 2026-05-22 022206.png", "/Screenshot 2026-05-22 022301.png", "/Screenshot 2026-05-22 022233.png"],
   },
   {
     title: "Physics based real time ML model - Patent Pending",
