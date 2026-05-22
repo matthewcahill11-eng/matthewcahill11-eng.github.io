@@ -98,21 +98,13 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Scholarships & Awards - Keep as grid display */}
+        {/* Scholarships & Awards - Larger cards with images */}
         {scholarshipProjects.length > 0 && (
           <div>
             <h3 className="text-xl font-semibold mb-6">Scholarships, Awards & Recognition</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {scholarshipProjects.map((project) => (
-                <div
-                  key={project.slug}
-                  className="rounded-lg border border-border bg-card p-4 hover:border-primary transition-all hover:shadow-md"
-                >
-                  <h4 className="text-sm font-semibold mb-1 line-clamp-2">
-                    {project.title}
-                  </h4>
-                  <p className="text-xs text-muted-foreground">{project.date}</p>
-                </div>
+                <ProjectCard key={project.slug} project={project} compact={true} />
               ))}
             </div>
           </div>
