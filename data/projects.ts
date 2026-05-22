@@ -449,7 +449,7 @@ export const projectsDatabase: ProjectData[] = [
     slug: "ef-the-bridge",
     section: "Scholarships Awards honous & recognitionh",
     headline: true,
-    images: ["/bridge-logo.png"],
+    images: ["/join_thebridge_logo.jfif"],
   },
   {
     title: "Ireland 2050 Financial Modelling Award",
