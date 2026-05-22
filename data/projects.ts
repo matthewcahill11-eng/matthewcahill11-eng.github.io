@@ -22,7 +22,7 @@ export const projectsDatabase: ProjectData[] = [
     tags: ["Simulink", "Simscape", "HiL", "Digital Twin", "VCC", "Real-Time Simulation", "MATLAB"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp1",
-    section: "Engineering",
+    section: "Trane Technologies",
     headline: true,
     images: ["/wp1 image.png", "/wp1 2.png"],
     content: `<h2>Master's Thesis Work Package 1: Simulink Model of the Thermo King Advancer Vapour Compression Cycle</h2>
@@ -64,7 +64,7 @@ export const projectsDatabase: ProjectData[] = [
     tags: ["Arduino", "HiL", "Embedded Systems", "SPI", "Control Systems", "Sensor Emulation", "C++"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp2",
-    section: "Engineering",
+    section: "Trane Technologies",
     headline: true,
     images: ["/wp2.png", "/wp2 2.png", "/wp2 3.png"],
     content: `<h2>Master's Thesis Work Package 2: Arduino-based Hardware-in-the-Loop Simulator for Transport Refrigeration Controls</h2>
@@ -109,7 +109,7 @@ export const projectsDatabase: ProjectData[] = [
     tags: ["Experimental Validation", "Data Acquisition", "Root Cause Analysis", "MultiDAC", "Bench Testing"],
     date: "M.E. Mechanical Engineering, University of Galway",
     slug: "masters-thesis-wp3",
-    section: "Engineering",
+    section: "Trane Technologies",
     headline: true,
     images: ["/wp3 1.png", "/wp3 2.png", "/wp3 3.png"],
     content: `<h2>Master's Thesis Work Package 3: Experimental Validation of a Prototype HiL Simulator Against a Real Thermo King Advancer</h2>
@@ -217,7 +217,7 @@ export const projectsDatabase: ProjectData[] = [
     description:
       "Self-hosted agentic coding platform for Fortune 500 R&D team:\n• Ollama + open-source VS Code agent + Open WebUI stack\n• Adopted by 2–5 engineers on departmental ML pipelines\n• Cursor-equivalent functionality with zero data egress\n• Triggered internal review into team-wide Claude adoption",
     section: "Trane Technologies",
-    headline: true,
+    headline: false,
     content: `<h2>Side Project: On-Prem Agentic Coding Platform</h2>
 <p><strong>Self-initiated tooling, Trane Technologies — adopted by 2–5 engineers; triggered an internal review into team-wide Claude adoption</strong></p>
 
