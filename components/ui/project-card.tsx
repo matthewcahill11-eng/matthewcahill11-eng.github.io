@@ -122,7 +122,13 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
             </div>
           )}
 
-          <p className={`text-sm text-muted-foreground mb-3 ${compact ? 'line-clamp-2' : 'line-clamp-3'}`}>{project.description}</p>
+          <div className={`text-sm text-muted-foreground mb-3 ${compact ? 'line-clamp-2' : ''}`}>
+            {project.description.split('\n').map((line, idx) => (
+              <p key={idx} className={line.startsWith('•') ? 'ml-0 mb-1' : 'mb-2'}>
+                {line}
+              </p>
+            ))}
+          </div>
           {!compact && (
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag, i) => (
