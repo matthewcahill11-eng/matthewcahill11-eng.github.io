@@ -544,7 +544,7 @@ export const projectsDatabase: ProjectData[] = [
     date: "University of Galway, Autumn 2023",
     slug: "cfd-solver-studies",
     section: "Engineering",
-    images: [],
+    images: ["/CaseComparisonplusdiff.png", "/Screenshot 2026-05-22 020256.png"],
   },
   {
     title: "Computational Solver for Elastoplastic Hardening",
