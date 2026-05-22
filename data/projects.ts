@@ -426,24 +426,24 @@ export const projectsDatabase: ProjectData[] = [
     content: `<h2>Selected for The Bridge: Entrepreneurs First's Inaugural US Residency</h2>
 <p><strong>Inaugural cohort, April 2026 — San Francisco Bay Area</strong></p>
 
-<p>Selected for the first cohort of The Bridge, Entrepreneurs First's new eight-week residency for Europe's most ambitious early-stage founders. EF runs the world's most selective talent investor programme — its portfolio has surpassed $13 billion in value — and The Bridge is its highest-conviction bet on founding from scratch in San Francisco.</p>
+<p>Entrepreneurs First is the world's leading talent investor — they back individuals before there is a team, an idea, or a company, and their portfolio has surpassed $13 billion in value. Selection is based on the founder, not the pitch, which is a materially higher bar than accelerators that admit existing startups.</p>
 
-<p><strong>Result: Selected pre-team, pre-idea into a 40–50 person cohort. Up to $250k initial EF investment, with $600k in partner credits (OpenAI, Anthropic, GitHub) and a direct path to up to $3M in follow-on rounds.</strong></p>
+<p>In 2025, EF launched The Bridge — an eight-week San Francisco residency built as their highest-conviction bet on founding from scratch in the Bay Area. I was selected for the inaugural cohort, 40–50 founders drawn from across Europe and chosen pre-team and pre-idea.</p>
 
-<h3>What The Bridge selects for</h3>
-<p>EF backs individuals before there is a company, a team, or an idea. Selection is based on the founder, not the pitch — which is a materially different bar from accelerators that admit existing startups. The cohort is drawn from across Europe and concentrated into a dedicated Hacker House in the Bay Area for eight weeks of ideation, team formation, and building from zero.</p>
+<p><strong>Result: Selected pre-team, pre-idea into the first cohort. Up to $250k initial EF investment, $600k in partner credits (OpenAI, Anthropic, GitHub), and a direct path to follow-on rounds up to $3M.</strong></p>
 
-<h3>Scope of the residency</h3>
+<h3>What happens next</h3>
+<p>In April 2026, the cohort moves into a dedicated Hacker House in the Bay Area for eight weeks of ideation, team formation, and building from zero. Founders arrive as individuals and leave with a cofounder, a company, and EF backing.</p>
+
 <ul>
-<li><strong>Pre-team, pre-idea entry</strong> — founders arrive as individuals and leave with a cofounder, a company, and EF backing.</li>
 <li><strong>EF investment up to $250k</strong> within 8–12 weeks of forming a company, with potential follow-on rounds up to $3M.</li>
 <li><strong>$600k in partner credits</strong> from OpenAI, Anthropic, and GitHub.</li>
 <li><strong>Silicon Valley advisory access</strong> — weekly sessions with experienced founders, operators, and US investors.</li>
-<li><strong>In-person Demo Day</strong> pitching directly to US investors at the end of the eight weeks.</li>
+<li><strong>In-person Demo Day</strong> pitching directly to US investors at the end of the residency.</li>
 </ul>
 
 <h3>Recognition</h3>
-<p>Inaugural cohort of a programme designed by EF — the talent investor behind a portfolio now valued at over $13 billion — to identify the European founders most likely to build globally significant companies in the AI era. Selection is conducted directly by the EF team in London and San Francisco.</p>`,
+<p>Inaugural cohort selected directly by the EF team in London and San Francisco — the talent investor behind a portfolio now valued at over $13 billion — to identify the European founders most likely to build globally significant companies in the AI era.</p>`,
     tags: ["Entrepreneurship", "The Bridge", "EF", "Startups", "San Francisco", "AI"],
     date: "Entrepreneur First, April 2026",
     slug: "ef-the-bridge",
