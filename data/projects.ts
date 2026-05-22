@@ -518,6 +518,35 @@ export const projectsDatabase: ProjectData[] = [
     images: ["/image-000.png", "/image-001.png", "/image-002.png", "/image-003.png"],
   },
   {
+    title: "CFD Solver Studies — Biomedical, Mixing, and Electronics Cooling",
+    description: "Three Ansys Fluent studies covering distinct physical regimes — arterial plaque flow, turbulent mixing validation, and electronics cooling with radiation. Each lab swapped governing equations, mesh strategy, and validation approach.",
+    content: `<h2>Academic Project: CFD Solver Studies — Biomedical, Mixing, and Electronics Cooling</h2>
+<p><strong>Final-year coursework, BE Mechanical Engineering, University of Galway — Autumn 2023</strong></p>
+
+<p>Three Ansys Fluent studies covering distinct physical regimes — turbulent flow with wall-bounded geometry, multi-stream thermal mixing with theoretical validation, and conjugate heat transfer with radiation. Each lab swapped the governing equations, mesh strategy, and validation approach to fit the problem.</p>
+
+<h3>Lab 1 — Plaque-induced disturbance in arterial blood flow</h3>
+<p>Parametric sweep of seven plaque radii (1.0–3.0 mm) in a 4 mm vessel, K-ε / K-ω turbulence models, blood approximated as water. Cross-referenced wall shear stress contours and downstream vortex formation against Gijsen et al. (2019, European Heart Journal) — peak shear 124 Pa at 1.5 mm rising to 239 Pa at 2.5 mm, with vortex growth tracking the platelet-aggregation mechanism described in the paper.</p>
+
+<h3>Lab 2 — Turbulent fluid mixing in a tee junction</h3>
+<p>Two water inlets at 280 K and 350 K, inlet 2 velocity swept 0–24 m/s, K-ε with energy equation. Derived an enthalpy-balance theoretical model (ṁ₁h₁ + ṁ₂h₂ = ṁ₃h₃) as an independent validation reference — CFD outlet temperature matched theory within 0.5% average error across all eight cases. Documented convergence behaviour at low inlet 2 velocity as a K-ε limitation in low-turbulence regimes (311 iterations at 1 m/s vs. 69 at 7 m/s).</p>
+
+<h3>Lab 3 — Electronics cooling with natural convection and radiation</h3>
+<p>75 W chip on FR-4 PCB with copper finned heat sink in a closed chamber, modelled with and without surface-to-surface ray-traced radiation. Including radiation dropped average component temperature by 14°C and redistributed thermal load onto the chamber walls — a 27°C peak difference visible in the PCB contour comparison. Demonstrated radiation is not negligible in mixed-mode heat transfer problems.</p>
+
+<h3>Shared methodology</h3>
+<ul>
+<li><strong>Mesh refinement</strong> — inflation layers at walls across all three labs to align cell faces with near-wall flow; element sizes selected by trading convergence time against accuracy.</li>
+<li><strong>Independent validation</strong> — each lab paired the CFD result against an external reference (published literature, derived thermodynamic theory, or a paired comparison case) rather than treating the solver output as ground truth.</li>
+<li><strong>Residual diagnostics</strong> — convergence behaviour treated as a model-quality signal, not just a stopping criterion (flagged K-ε instability at low Reynolds, S2S sawtooth from raytrace recalculation).</li>
+</ul>`,
+    tags: ["CFD", "Ansys Fluent", "Turbulence Modelling", "Heat Transfer", "Biomedical", "Thermal Analysis"],
+    date: "University of Galway, Autumn 2023",
+    slug: "cfd-solver-studies",
+    section: "Engineering",
+    images: [],
+  },
+  {
     title: "Computational Solver for Elastoplastic Hardening",
     description: "Built a computational solver in Excel implementing the Chaboche nonlinear hardening algorithm with integrated parameter fitting, cross-validated against an Abaqus axisymmetric FEA model — fit SSE 406.62, ±17% agreement on small-deformation loads.",
     content: `<h2>Computational Solver for Elastoplastic Hardening, Validated Against FEA</h2>
