@@ -481,10 +481,10 @@ export const projectsDatabase: ProjectData[] = [
     images: [],
   },
   {
-    title: "Co-founded Forge Robotics - Accepted to Y Combinator S25",
-    description: "Co-founded Forge Robotics - Accepted to Y Combinator S25 shortly after my departure for family/health reasons.",
+    title: "Co-founded Forge Robotics",
+    description: "Co-founded Forge Robotics, an autonomous welding robotics startup. Left before YC S25 batch for family/health reasons. Company subsequently accepted to Y Combinator S25.",
     content: "",
-    tags: ["Startup", "Y Combinator", "Robotics", "Co-founder"],
+    tags: ["Startup", "Robotics", "Co-founder", "Welding"],
     date: "Forge Robotics",
     slug: "forge-yc",
     section: "Scholarships Awards honous & recognitionh",
